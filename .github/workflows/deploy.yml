@@ -15,8 +15,8 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v3
       with:
-        username: harshit0103
-        password: Harsh@123
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build & Push Docker Image
       run: |
@@ -28,33 +28,9 @@ jobs:
     - name: Deploy to EC2 via SSH
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: 56.228.41.82
+        host: ${{ secrets.EC2_HOST }}
         username: ubuntu
-        key: MIIEpAIBAAKCAQEA0dd7ijs96GiY7xRD1AvvdrD/1WU7ZhlSot1+XTEabb3s7HGQ
-            6Wj/m/NCm2LigDKeJzGVeNtkWX6T7Lyv5pXRyQA4ZZPBzAulmt9rKanRfB4ybpjk
-            lhgrNvarMkkGeJSyHup0SBiz2/7CzjHGQtVMuhFJFRl0kNT4eAC9yHRreNEU8Zs6
-            nDR+biOvw322ey6CDqrYNtunpFQD35x5pxHabaHGyggk+4h6VjYt3Z3pPr7Xv3SS
-            GvCuiDcCRC3FsrGqetHkTQIvcdMnllJ+Ay5YVqjUw4SeetTajTcx7RTywBI8ulMH
-            jMAYWW6xlpywFEtJGA0ILfgA7GGICJKpCfBYMQIDAQABAoIBAQDDuYF5hZhQ1n8P
-            QI+jkR5iTuXRXQLyUFxLnNzof4xvH9+FCshnbZA9HcDavnkVqiDp3c3VVI1dDDtd
-            bQGEyelK2fHAjPkOIS7uLcX+rm6+nkvb7LAJb7GfKqSz2nk2rzsUqwqa1K+uWwnI
-            2ZRbciiGxOitzXh0PrEi/U4HUs+Ld4dj0kpZI4epkAlgxuBkZVMbQXrvKner2sZO
-            V0PhpbYOb+CDAHqX1ShFFP3pxxILjKsSHyfrJmLyEAxgiM5xiXWIHdBHFwiDGheW
-            zabo2spaZRime2AthHJElBzGPN4dAg0zmaSmjYHHTWnndpGPY+0FHYadVfm537vM
-            e5U+pQ+BAoGBAPyDwk9j8DEJlr17cg8f44MYK7j8PsaGULsnC4GJIhaVlTxd9Q4J
-            ediB4el7HVzKFUks5SYBbH+PCvWmbHko/UJCIyIZ49Zyg9Rd/N9clwYo16Wjkfws
-            Hk8WNVdclJ05/XvYttXhb8ustfMl2Uyp5Z4/fLAgcDjl7a/c3oVcS2lVAoGBANS8
-            8SZFpMFk2nYMEsBnS/g563rTIaiSBmyhy0oYmlUY/MPVxhvV8uQOb4bCot+q18OU
-            fn6VfHxUuXlVIaAvrmn0/dvPLjreZgd3B+9MwtyxsGep5fEamIbNuJN10172wKaG
-            HfOv3HFw/QTYJyhKYNufZXGjNGUoN8hOULozNoNtAoGARU7U0n2Xu53qJe/wCn6y
-            L5U+yvNRN6Q+HGBHJDLDjHdaEsunK0cmjmp322HTWViOJxuPebMCWLCmTW50b3z0
-            pm8IvZ9ljcK4tF1nvtbnDOXA6tHOi+yAFSz/Tw82K0Fzdb6x0FqkGL864ZYN4qDv
-            SVQboSwGIVfauV5iJTCD8lECgYEAmR7hp71q57QytdLc0FXJTYJK5p3+1Pk93ITb
-            8Joiw2t3y3Eb5b8p01I8nc+MMdci8+f24B+yeT72PMm0qTqInEU1TzghO0gGQgs/
-            z9L9UqImqYaVNeQBss1xs9mT6P9MDM/t0Q9caN59jzYRgSN/8bQZ7SAeP00iUW9l
-            FZB1BUUCgYAS/uc5qxTjiAN5AkGNz/nyUOBSPnecDvj/eKzWNmjCmyFhnxqSTAIj
-            P0EBPk3Whe6ykEHqrdc6MkTnUw0RiiT/XMGWNkSyE9WX628KXv1OoNRY5vV0wNUk
-            aYW7abJgOGHaeMsZKiR4/BCplk8UJrOnDeTcqs199BDupKHMQE3rCA==
+        key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           IMAGE_NAME=portfolio
           chmod +x scripts/deploy.sh
