@@ -3,6 +3,9 @@ import pandas as pd
 import os
 from datetime import datetime
 from flask_cors import CORS
+from flask import send_from_directory
+
+
 
 app = Flask(__name__)
 CORS(app)  # allow frontend hosted on another port or domain
@@ -14,9 +17,21 @@ if not os.path.exists(CSV_FILE):
     df = pd.DataFrame(columns=['Name', 'Email', 'Message', 'Date'])
     df.to_csv(CSV_FILE, index=False)
 
+@app.route('/',methods=['GET'])
+def serve_index():
+    return send_from_directory('.', 'index.html')
+
 @app.route('/contact', methods=['POST'])
 def contact():
-    data = request.get_json()
+    data = request.get_json(silent=True)
+
+    if data is None:
+        data = {
+            'name': request.form.get('name'),
+            'email': request.form.get('email'),
+            'message': request.form.get('message'),
+        }
+
     name = data.get('name')
     email = data.get('email')
     message = data.get('message')
