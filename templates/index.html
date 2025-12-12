@@ -6,13 +6,14 @@
   <title>Rupali Pawar — Data Analyst (Dashboard)</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <script  src="{{ url_for('static', filename='script.js') }}"defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+  <script  src="{{ url_for('static', filename='script.js') }}"defer></script> 
+  <link rel="stylesheet" href="../static/style.css"> 
+  <script  src="../static/script.js"defer></script>
 </head>
 <body>
   <div class="container">
 
-    <!-- NAV -->
     <header class="nav">
       <div class="brand">
         <div class="logo">RP</div>
@@ -29,10 +30,10 @@
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contact" class="nav-link cta">Contact</a></li>
         </ul>
-
         <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
       </nav>
-    </header>
+</header>
+
 
     <!-- HERO -->
     <main>
@@ -59,18 +60,17 @@
         </div>
 
         <aside class="hero-right card">
-          <div class="profile">
-            <div class="avatar">RP</div>
-            <div>
-              <div style="font-weight:700">Rupali Pawar</div>
-              <div class="small muted">Data Analyst • Power BI • Python • SQL</div>
-            </div>
-          </div>
 
           <div class="video-preview">
             <!-- placeholder video (replace VIDEO_ID) -->
-            <iframe id="introVideo" class="video" src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1"
-              title="Rupali Pawar — Intro" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="introVideo" class="video"
+                src="https://www.youtube.com/embed/gsRq0HJf1DE?start=260"
+                title="Rupali Pawar — Intro"
+                frameborder="0"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
             <button id="videoToggle" class="video-toggle">Unmute ▶</button>
           </div>
         </aside>
@@ -151,7 +151,7 @@
               </div>
 
               <div style="margin-top:14px">
-                <a class="btn-resume" href="Rupali_Pawar_Resume.pdf" download>Download Resume</a>
+                <a class="btn-resume" href="../static/resume.pdf" download>Download Resume</a>
               </div>
             </form>
           </div>

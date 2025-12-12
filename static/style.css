@@ -5,7 +5,7 @@
   --accent-grad: linear-gradient(135deg,#6d28d9 0%,#06b6d4 100%);
   --muted: #9aa4b2;
   --glass-border: rgba(255,255,255,0.08);
-  --max-width: 1200px;
+  --max-width: 1750px;
   --gold: #bfa46a;
 }
 
@@ -27,23 +27,115 @@ body{
 }
 .container{width:100%;max-width:var(--max-width)}
 
-/* NAV */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;background:#071227;border-radius:12px;padding:12px 18px;}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:48px;height:48px;border-radius:10px;background:var(--accent-grad);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
-.brand-text .brand-name{font-weight:700}
-.brand-text .brand-role{font-size:13px;color:var(--muted)}
+/* ===== NAVBAR ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-radius: 14px;
 
-.nav-menu ul{display:flex;gap:18px;align-items:center;margin:0;padding:0}
-.nav-menu a{color:var(--muted);text-decoration:none;font-weight:600}
-.nav-menu a:hover,.nav-menu a.active{color:#fff}
-.hamburger{display:none;background:transparent;border:0;color:#e6eef8;font-size:20px;cursor:pointer}
+  /* Premium glass effect */
+  background: rgba(7, 18, 39, 0.65);
+  backdrop-filter: blur(12px);
+
+  /* Smooth shadow */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--accent-grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+
+.brand-text .brand-name {
+  font-weight: 700;
+  font-size: 18px;
+}
+.brand-text .brand-role {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Menu */
+.nav-menu ul {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+
+  /* Animation */
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.nav-menu a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-menu a.active {
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(255,255,255,0.1);
+}
+
+/* CTA special styling */
+.nav-menu .cta {
+  padding: 8px 14px;
+  background: var(--accent-grad);
+  color: #fff !important;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.nav-menu .cta:hover {
+  opacity: 0.9;
+}
+
+.nav-menu ul {
+  list-style: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: #e6eef8;
+  font-size: 22px;
+  cursor: pointer;
+}
+
 
 /* HERO */
-.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin:28px 0}
+.hero{display:grid;grid-template-columns:1fr 520px;gap:28px;align-items:start;margin:28px 0}
 .hero-left h1{font-size:42px;margin:0 0 12px 0}
 .accent{background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);max-width:700px;margin-bottom:16px}
+.lead{color:var(--muted);max-width:500px;margin-bottom:16px}
 .btns{display:flex;gap:12px}
 .btn{padding:12px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
 .btn-primary{background:var(--accent-grad);box-shadow:0 8px 30px rgba(13,14,31,0.5);color:#001}
@@ -54,11 +146,11 @@ body{
 .stat-label{font-size:13px;color:var(--muted)}
 
 /* hero right */
-.hero-right.card{backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border:1px solid var(--glass-border);padding:18px;border-radius:12px}
+.hero-right.card{backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border:1px solid var(--glass-border);padding:5px;border-radius:12px;}
 .profile{display:flex;gap:16px;align-items:center}
 .avatar{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#0ea5a7,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800}
-.video-preview{margin-top:16px;position:relative}
-.video{width:100%;height:210px;border:0;border-radius:8px}
+.video-preview{position:relative}
+.video{width:100%;height:300px;border:0;border-radius:8px}
 .video-toggle{position:absolute;right:12px;bottom:12px;padding:8px 10px;border-radius:999px;background:rgba(0,0,0,0.6);color:#fff;border:0;cursor:pointer}
 
 /* SECTIONS & CARDS */
