@@ -7,46 +7,57 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
-  <script  src="{{ url_for('static', filename='script.js') }}"defer></script> 
-  <link rel="stylesheet" href="../static/style.css"> 
-  <script  src="../static/script.js"defer></script>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='favicon/android-chrome-512x512.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='favicon/android-chrome-192x192.png') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+
+
+
+  <!--<link rel="stylesheet" href="../static/style.css"> -->
+  <!--<script  src="../static/script.js"defer></script>-->
 </head>
 <body>
   <div class="container">
-
-    <header class="nav">
-      <div class="brand">
-        <div class="logo">RP</div>
-        <div class="brand-text">
-          <div class="brand-name">Rupali Pawar</div>
-          <div class="brand-role">Data Analyst • 7 yrs</div>
-        </div>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">RP</div>
+      <div class="brand-text">
+        <div class="brand-name">Rupali Pawar</div>
+        <div class="brand-role">Data Analyst • 7 yrs</div>
       </div>
+    </div>
 
-      <nav class="nav-menu" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="projects.html" class="nav-link">Projects</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#contact" class="nav-link cta">Contact</a></li>
-        </ul>
-        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      </nav>
-</header>
-
-
+    <nav class="nav-menu" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="nav-link active">HOME</a></li>
+        <li><a href="projects.html" class="nav-link">PROJECTS</a></li>
+        <li><a href="#skills" class="nav-link">SKILLS</a></li>
+        <li><a href="#contact" class="nav-link cta">CONTACT ME</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+  
+  
+    
     <!-- HERO -->
     <main>
-      <section class="hero reveal" id="intro">
-        <div class="hero-left">
-          <h1>Hi — I’m <span class="accent">Rupali Pawar</span></h1>
-          <p class="lead">I help companies transform complex data into actionable insights. Available for freelance projects globally.</p>
-
-          <div class="btns">
-            <a class="btn btn-primary" href="projects.html">View Projects</a>
-            <a class="btn btn-ghost" href="#contact">Contact</a>
-          </div>
-
+      <section class= "hero1" id = "introduction">
+        <div class = "hero-mid">
+          <h1 class = "heading1">Trusted data. Smarter decisions.</h1>
+          <h2 class = "heading2">Hi — I’m <span class="accent">Rupali Pawar</span></h2>
+          <p class="lead">Lead Data Quality specialist with 7 years of experience in data quality, governance, and analytics within the financial sector. Skilled in 
+                            Purview, Collibra, OvalEdge, SQL, Python, and dashboarding with Power BI and Tableau. Proven ability to implement DQ frameworks, 
+                            automate data validation, and maintain data catalogs and business glossaries to ensure data integrity and compliance. Known for sharp 
+                            analytical skills, attention to detail, and clear communication.  </p>
           <div class="quick-stats">
             <div class="stat">
               <div class="stat-num">7+</div>
@@ -58,35 +69,24 @@
             </div>
           </div>
         </div>
-
-        <aside class="hero-right card">
-
-          <div class="video-preview">
-            <!-- placeholder video (replace VIDEO_ID) -->
-            <iframe id="introVideo" class="video"
-                src="https://www.youtube.com/embed/gsRq0HJf1DE?start=260"
-                title="Rupali Pawar — Intro"
-                frameborder="0"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-
-            <button id="videoToggle" class="video-toggle">Unmute ▶</button>
-          </div>
-        </aside>
       </section>
 
       <!-- SKILLS -->
-      <section id="skills" class="reveal card">
-        <h3>Skills</h3>
+      <section id="skills" class="skillsection">
+        <h1 class= "skillheading1">What I Do ?</h1>
         <p class="small muted">Tools and techniques built over 7 years</p>
-        <div class="skills-grid">
-          <div class="skill"><b>Python</b><small>Pandas, NumPy, automation</small></div>
-          <div class="skill"><b>SQL</b><small>Advanced queries, window functions</small></div>
-          <div class="skill"><b>Power BI</b><small>DAX, modeling, dashboards</small></div>
-          <div class="skill"><b>Tableau</b><small>Visual storytelling</small></div>
-          <div class="skill"><b>Excel</b><small>Power Query, VBA</small></div>
-          <div class="skill"><b>Analytics</b><small>EDA, A/B testing, forecasting</small></div>
+        <div class="idosection">
+          <div class="section section1">
+            <h3>Data Quality & Governance: Design, implement, and monitor enterprise-wide data quality frameworks and governance practices to ensure data integrity and compliance.</h3>
+          </div>
+          <div class="section section2">
+            <h3>Data Quality & Governance: Design, implement, and monitor enterprise-wide data quality frameworks and governance practices to ensure data integrity and compliance.</h3>
+
+          </div>
+          <div class="section section3"></div>
+          <div class="section section4"></div>
+          <div class="section section5"></div>
+          <div class="section section6"></div>
         </div>
       </section>
 
@@ -159,7 +159,7 @@
           <aside>
             <div class="card" style="padding:12px;border-radius:10px">
               <div style="font-weight:700">Email</div>
-              <div class="small muted">rupali@example.com</div>
+              <div class="small muted">roopalipawar00@gmail.com</div>
 
               <div style="margin-top:12px;font-weight:700">Social</div>
               <div style="margin-top:8px" class="small muted">LinkedIn • GitHub</div>
@@ -178,6 +178,24 @@
 
   <!-- toast -->
   <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- Video floating-->
+  <!-- Video floating -->
+  <div id="floating-video">
+    <div id="dragHandle">⋮⋮</div>
+
+    <video id="videoPlayer" controls autoplay>
+      <source src="../static/videos/intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <button id="closeVideo">✕</button>
+</div>
+
+
+
+</div>
+<script  src="{{ url_for('static', filename='script.js') }}"defer></script> 
 
 </body>
 </html>

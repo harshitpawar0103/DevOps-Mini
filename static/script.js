@@ -2,9 +2,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // set years
-  const y = new Date().getFullYear();
-  document.getElementById('year')?.textContent = y;
-  document.getElementById('year2')?.textContent = y;
+  const y = new Date().getFullYear(); 
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = y;
+
+  const yearEl2 = document.getElementById('year2');
+  if (yearEl2) yearEl2.textContent = y;
+
 
   // reveal on scroll
   const obs = new IntersectionObserver((entries, o) => {
@@ -58,32 +62,74 @@ document.addEventListener('DOMContentLoaded', () => {
   markActive();
   window.addEventListener('popstate', markActive);
 
-  // Video unmute toggle
-  const video = document.getElementById('introVideo');
-  const vt = document.getElementById('videoToggle');
-  if (vt && video) {
-    let muted = true;
-    vt.addEventListener('click', () => {
-      try {
-        // toggle by setting muted property
-        video.muted = !video.muted;
-        muted = video.muted;
-        vt.textContent = muted ? 'Unmute ▶' : 'Mute ⏸';
-      } catch (err) {
-        // fallback: reload with mute param changed
-        let src = video.src || '';
-        if (muted) {
-          video.src = src.replace('mute=1', 'mute=0');
-          vt.textContent = 'Mute ⏸';
-          muted = false;
-        } else {
-          video.src = src.replace('mute=0', 'mute=1');
-          vt.textContent = 'Unmute ▶';
-          muted = true;
-        }
-      }
-    });
-  }
+   
+ const box = document.getElementById("floating-video");
+const handle = document.getElementById("dragHandle");
+const closeBtn = document.getElementById("closeVideo");
+
+if (!box || !handle || !closeBtn) {
+  console.error("Floating video elements not found");
+} else {
+  
+  const box = document.getElementById("floating-video");
+  const video = document.getElementById("videoPlayer");
+  const closeBtn = document.getElementById("closeVideo");
+
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+box.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  const rect = box.getBoundingClientRect();
+  offsetX = e.clientX - rect.left;
+  offsetY = e.clientY - rect.top;
+  box.style.cursor = "grabbing";
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  box.style.left = e.clientX - offsetX + "px";
+  box.style.top = e.clientY - offsetY + "px";
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  box.style.cursor = "grab";
+});
+
+/* TOUCH */
+box.addEventListener("touchstart", (e) => {
+  const t = e.touches[0];
+  const rect = box.getBoundingClientRect();
+  offsetX = t.clientX - rect.left;
+  offsetY = t.clientY - rect.top;
+  isDragging = true;
+}, { passive: false });
+
+document.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const t = e.touches[0];
+  box.style.left = t.clientX - offsetX + "px";
+  box.style.top = t.clientY - offsetY + "px";
+}, { passive: false });
+
+document.addEventListener("touchend", () => {
+  isDragging = false;
+});
+
+/* CLOSE */
+if (box && video && closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    video.pause();
+    video.currentTime = 0;
+    box.style.display = "none";
+  });
+}
+
+}
+
+  
 
   // contact form: mailto fallback + toast
   const form = document.getElementById('contactForm');
