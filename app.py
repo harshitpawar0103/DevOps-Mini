@@ -19,7 +19,21 @@ if not os.path.exists(CSV_FILE):
 
 @app.route('/',methods=['GET'])
 def home():
-    return render_template("index.html")
+    return render_template("index.html",active_page="index")
+
+
+@app.route('/projects')
+def projects():
+    return render_template('projects.html', active_page="projects")
+
+
+@app.route('/skills')
+def skills():
+    return render_template('skills.html', active_page="skills")
+
+@app.context_processor
+def inject_request():
+    return dict(request=request)
 
 @app.route('/contact', methods=['POST'])
 def contact():

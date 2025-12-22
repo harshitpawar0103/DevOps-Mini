@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rupali Pawar — Data Analyst (Dashboard)</title>
+  <title>Data Analyst Portfolio | Power BI, Tableau, SQL, Python – Harshit Pawa</title>
+  <meta name="description" content="Portfolio of Harshit Pawar – Data Analyst skilled in Power BI, SQL, Python, Tableau, and business analytics. View real-world projects.">
+
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
 
@@ -19,9 +21,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
   <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
 
+  <script  src="{{ url_for('static', filename='script.js') }}"defer></script> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+  
 
-  <!--<link rel="stylesheet" href="../static/style.css"> -->
   <!--<script  src="../static/script.js"defer></script>-->
 </head>
 <body>
@@ -37,12 +41,25 @@
 
     <nav class="nav-menu" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html" class="nav-link active">HOME</a></li>
-        <li><a href="projects.html" class="nav-link">PROJECTS</a></li>
-        <li><a href="#skills" class="nav-link">SKILLS</a></li>
-        <li><a href="#contact" class="nav-link cta">CONTACT ME</a></li>
+        <li>
+          <a href="{{ url_for('home') }}" 
+          class="nav-link {% if active_page == 'home' %}active{% endif %}">HOME</a>
+        </li>
+        <li>
+          <a href="{{ url_for('projects') }}"
+          class="nav-link {% if active_page == 'projects' %}active{% endif %}">PROJECTS</a>
+        </li>
+        <li>
+          <a href="{{ url_for('skills') }}" 
+          class="nav-link {% if active_page == 'skills' %}active{% endif %}">SKILLS</a>
+        </li>
+        <li>
+          <a href="{{ url_for('home') }}#contact" 
+          class="nav-link cta">CONTACT ME</a>
+        </li>
       </ul>
     </nav>
+
     <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
   </header>
   
@@ -168,8 +185,8 @@
 </section>
 
 
-      <section id="projects-preview" class="projects-section">
-  <h2 class="section-title">Selected Projects</h2>
+  <section id="projects-preview" class="projects-section">
+  <h2 class="section-title">DATA PROJECTS</h2>
   <p class="section-subtitle">
     A snapshot of high-impact analytics solutions delivered for business teams.
   </p>
@@ -277,7 +294,7 @@
 </section>
 
 
-      <!-- CONTACT -->
+<!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="contact-wrapper">
 
@@ -360,7 +377,6 @@
 
 
 </div>
-<script  src="{{ url_for('static', filename='script.js') }}"defer></script> 
 
 </body>
 </html>

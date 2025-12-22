@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Best Data Analyst Portfolio | Power BI, Tableau, SQL, Python – Rupali Pawar</title>
+  <meta name="description" content="Portfolio of Harshit Pawar – Data Analyst skilled in Power BI, SQL, Python, Tableau, and business analytics. View real-world projects.">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='favicon/android-chrome-512x512.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='favicon/android-chrome-192x192.png') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+
+
+  <script  src="{{ url_for('static', filename='script.js') }}"defer></script> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+
+
+</head>
+<body>
+  <div class="container">
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">RP</div>
+      <div class="brand-text">
+        <div class="brand-name">Rupali Pawar</div>
+        <div class="brand-role">Data Analyst • 7 yrs</div>
+      </div>
+    </div>
+
+    <nav class="nav-menu" aria-label="Main navigation">
+      <ul>
+        <li>
+          <a href="{{ url_for('home') }}" 
+          class="nav-link {% if active_page == 'home' %}active{% endif %}">HOME</a>
+        </li>
+        <li>
+          <a href="{{ url_for('projects') }}"
+          class="nav-link {% if active_page == 'projects' %}active{% endif %}">PROJECTS</a>
+        </li>
+        <li>
+          <a href="{{ url_for('skills') }}" 
+          class="nav-link {% if active_page == 'skills' %}active{% endif %}">SKILLS</a>
+        </li>
+        <li>
+          <a href="{{ url_for('home') }}#contact" 
+          class="nav-link cta">CONTACT ME</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </header>
+
+
+  <section class="container">
+    <section class = "da">
+        <section class = "Daskills">
+            <div class = "mHeading">
+            <h1 >DATA ANALYSIS SKILLS</h1>
+            <span>The tools behind trusted data, automated quality checks, and business-ready insights.</span>
+            </div>
+            <div class = "daskillsfull">
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>DATABASE</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/oracle.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/adb.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/sqlite.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/mysql2.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/dl1.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/tda.png" class="toolimg">
+
+                    </div>
+                </div>
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>DATA CLEANING AND TRANSFORMATION</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/python.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/pd.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/np.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/Power-Query.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/tableau-prep.png" class="toolimg">
+
+                    </div>
+                </div>
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>DASHBOARDING</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/pbi1.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/tbu.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/excel2.png" class="toolimg">
+
+                    </div>
+                </div>
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>SOFTWARES</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/ovalEdge1.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/talend1.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/jira1.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/ot2.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/kb.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/collibra1.png" class="toolimg">
+                    </div>
+                    
+
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+
+   <!-- DevOps tools-->
+    <section class = "da">
+        <sectioin class = "Daskills">
+            <div class = "mHeading">
+            <h1 >DEVOPS TOOLS & PLATFORMS</h1>
+            <span>Automated pipelines, resilient infrastructure, and production-ready systems.</span>
+            </div>
+            <div class = "daskillsfull">
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>CLOUD PLATFORMS</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/aws.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/Microsoft_Azure.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/Google-Cloud.png" class="toolimg">
+                    </div>
+                    
+                </div>
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>CI/CD TOOLS</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/Github2.png" class="toolimg">
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/Jenkins1.png" class="toolimg">
+                    </div>
+                    
+                </div>
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>CONTAINERIZATION</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/Docker1.png" class="toolimg">
+
+                    </div>
+                    
+                </div>
+                <div class = "daskills">
+                    <div class = "daheading">
+                        <h2>CONTAINER ORCHESTRATION</h2>
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/kubernetes1.png" class="toolimg">
+
+                    </div>
+                    <div class = "tools">
+                        <img src="../static/images/amazon-ecs2.png" class="toolimg">
+
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+
+    <!-- Other tools
+    <div class = "da">
+        <div class = "Daskills">
+            <div class = "mHeading">
+            <h1 >OTHER TOOLS</h1>
+            <span>The tools behind trusted data, automated quality checks, and business-ready insights.</span>
+            </div>
+            <div class = "daskillsfull">
+                <div class = "daskills">
+                    
+                    <div class = "tools">
+                        <img src="../static/images/html1.png" class="toolimg">
+                    </div>
+                   
+                    
+                </div>
+                <div class = "daskills">
+
+                    <div class = "tools">
+                        <img src="../static/images/css1.png" class="toolimg">
+                    </div>
+                    
+                    
+                </div>
+                <div class = "daskills">
+
+                    <div class = "tools">
+                        <img src="../static/images/btstp.png" class="toolimg">
+
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+    </div> -->
+  <footer class="footer">
+  <div>© <span id="year"></span> Rupali Pawar</div>
+  <div class="small muted">Data Analytics • Consulting • Freelance</div>
+    </footer>  
+  </div>
+<script  src="{{ url_for('static', filename='script.js') }}"defer></script> 
+</body>
+</html>

@@ -1,98 +1,241 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects — Rupali Pawar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../static/style.css">
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <div class="container">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Data Analyst Portfolio | Power BI, Tableau, SQL, Python – Harshit Pawa</title>
+    <meta name="description" content="Portfolio of Harshit Pawar – Data Analyst skilled in Power BI, SQL, Python, Tableau, and business analytics. View real-world projects." />
 
-    <header class="nav">
-      <div class="brand">
-        <div class="logo">RP</div>
-        <div class="brand-text">
-          <div class="brand-name">Rupali Pawar</div>
-          <div class="brand-role">Data Analyst • 7 yrs</div>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}" />
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='favicon/android-chrome-512x512.png') }}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='favicon/android-chrome-192x192.png') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="nav">
+        <div class="brand">
+          <div class="logo">RP</div>
+          <div class="brand-text">
+            <div class="brand-name">Rupali Pawar</div>
+            <div class="brand-role">Data Analyst • 7 yrs</div>
+          </div>
         </div>
-      </div>
 
-      <nav class="nav-menu" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="projects.html" class="nav-link active">Projects</a></li>
-          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
-          <li><a href="index.html#contact" class="nav-link cta">Contact</a></li>
-        </ul>
+        <nav class="nav-menu" aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="{{ url_for('home') }}" class="nav-link {% if active_page == 'home' %}active{% endif %}">HOME</a>
+            </li>
+            <li>
+              <a href="{{ url_for('projects') }}" class="nav-link {% if active_page == 'projects' %}active{% endif %}">PROJECTS</a>
+            </li>
+            <li>
+              <a href="{{ url_for('skills') }}" class="nav-link {% if active_page == 'skills' %}active{% endif %}">SKILLS</a>
+            </li>
+            <li>
+              <a href="{{ url_for('home') }}#contact" class="nav-link cta">CONTACT ME</a>
+            </li>
+          </ul>
+        </nav>
         <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      </nav>
-    </header>
+      </header>
 
-    <main>
-      <section class="reveal card projects-full">
-        <h2>Projects</h2>
-        <p class="small muted">Deep-dive into selected work with measurable outcomes.</p>
+      <!-- Projects -->
+      <section id="projects-preview" class="projects-section">
+        <h1 class="section-title">DATA ANALYSIS PROJECTS</h1>
+        <p class="section-subtitle">A snapshot of high-impact analytics solutions delivered for business teams.</p>
 
         <div class="projects-grid">
-          <article class="project card">
-            <div class="thumb">Sales Dashboard</div>
-            <div class="meta">
-              <h4>Sales Performance Dashboard — Power BI</h4>
-              <p class="small muted">Automated reporting; reduced manual reporting time by <strong>40 hours/month</strong>. Live SQL refresh & forecasting.</p>
-              <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">DAX</span></div>
-              <div style="margin-top:10px"><a class="link" href="#">Case Study (PDF)</a> • <a class="link" href="#">Demo</a></div>
+          <!-- Project 1 -->
+          <article class="project-block" data-project="sales">
+            <div class="projectgap"></div>
+            <div class="project-image"></div>
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Sales Performance Dashboard</h3>
+              </div>
+              <span class="impact">⏱ 40+ hrs/month saved</span>
+
+              <p class="project-desc">Automated executive-level sales reporting with real-time KPIs, enabling faster and data-driven decisions.</p>
+
+              <ul class="project-points">
+                <li>Revenue, growth & trend analysis</li>
+                <li>SQL-based live data refresh</li>
+                <li>Drill-downs by region & product</li>
+              </ul>
+
+              <div class="project-footer">
+                <div class="chips">
+                  <span class="chip">Power BI</span>
+                  <span class="chip">SQL</span>
+                </div>
+              </div>
+              <a href="projects.html" class="view-btn">View Case Study</a>
             </div>
+            <div class="projectgap"></div>
           </article>
 
-          <article class="project card">
-            <div class="thumb">Notebook</div>
-            <div class="meta">
-              <h4>Customer Churn Prediction</h4>
-              <p class="small muted">Model & retention strategy delivered 15% increase in retention during pilot tests.</p>
-              <div class="chips"><span class="chip">Python</span><span class="chip">sklearn</span></div>
-              <div style="margin-top:10px"><a class="link" href="#">Notebook</a> • <a class="link" href="#">GitHub</a></div>
+          <!-- Project 2 -->
+          <article class="project-block" data-project="churn">
+            <div class="projectgap"></div>
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Customer Churn Prediction</h3>
+              </div>
+              <span class="impact">📈 +15% retention uplift</span>
+
+              <p class="project-desc">Atliq Business Insights is a comprehensive dashboard project leveraging the dataset of an electronics hardware company (Atliq). The dashboard provides various views including Finance, Sales, Marketing, and Supply Chain, offering valuable insights for informed decision-making.</p>
+
+              <ul class="project-points">
+                <li>Feature engineering & modeling</li>
+                <li></li>
+                <li>Actionable business insights</li>
+              </ul>
+
+              <div class="project-footer">
+                <div class="chips">
+                  <span class="chip">Python</span>
+                  <span class="chip">Scikit-learn</span>
+                </div>
+              </div>
+              <a href="projects.html" class="view-btn">Explore Solution</a>
             </div>
+            <div class="project-image"></div>
+            <div class="projectgap"></div>
           </article>
 
-          <article class="project card">
-            <div class="thumb">BI</div>
-            <div class="meta">
-              <h4>Financial Risk Dashboard</h4>
-              <p class="small muted">Risk heatmaps & prioritization — helped finance prioritize accounts and reduce review time.</p>
-              <div class="chips"><span class="chip">Tableau</span><span class="chip">MySQL</span></div>
-              <div style="margin-top:10px"><a class="link" href="#">Live</a> • <a class="link" href="#">Report</a></div>
-            </div>
-          </article>
+          <!-- Project 3 -->
+          <article class="project-block" data-project="risk">
+            <div class="projectgap"></div>
+            <div class="project-image"></div>
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Financial Risk Dashboard</h3>
+              </div>
+              <span class="impact">⚠ Faster risk prioritization</span>
 
-          <article class="project card">
-            <div class="thumb">Analysis</div>
-            <div class="meta">
-              <h4>Marketing Insights — CodeX</h4>
-              <p class="small muted">Survey analysis across 10 cities; produced target segments & GTM recommendations.</p>
-              <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span></div>
-              <div style="margin-top:10px"><a class="link" href="#">Report</a> • <a class="link" href="#">GitHub</a></div>
-            </div>
-          </article>
-        </div>
+              <p class="project-desc">Designed a finance-focused risk monitoring dashboard to surface critical risks early and improve decision speed.</p>
 
-        <div style="margin-top:20px">
-          <a href="index.html" class="btn btn-ghost">Back to Home</a>
+              <ul class="project-points">
+                <li>Risk heatmaps & scoring</li>
+                <li>Priority-based alert views</li>
+                <li>Stakeholder-friendly visuals</li>
+              </ul>
+
+              <div class="project-footer">
+                <div class="chips">
+                  <span class="chip">Tableau</span>
+                  <span class="chip">MySQL</span>
+                </div>
+              </div>
+              <a href="projects.html" class="view-btn">View Case Study</a>
+            </div>
+            <div class="projectgap"></div>
+          </article>
         </div>
       </section>
-    </main>
 
-    <footer class="reveal">
-      <div>© <span id="year2"></span> Rupali Pawar</div>
-      <div class="small muted">Projects • Portfolio</div>
-    </footer>
-  </div>
+      <footer class="footer">
+        <div>
+          © <span id="year"></span> Rupali Pawar
+        </div>
+        <div class="small muted">Data Analytics • Consulting • Freelance</div>
+      </footer>
+    </div>
 
-  <!-- toast -->
-  <div id="toast" class="toast" aria-live="polite"></div>
-  
+    <!--  Project Detail Overlay
+    <div class="project-overlay" id="projectOverlay">
+      <div class="project-panel">
+        <button class="close-btn" onclick="closeProject()">✕</button>
 
-</body>
+        <h2 class="project-title">Sales Performance Dashboard</h2>
+        <div class="ohero">
+          <div class="small-desc">
+            <div class="tech-stack">
+              <span>Power BI</span>
+              <span>SQL</span>
+              <span>Pandas</span>
+            </div>
+            <p class="project-description">Atliq Business Insights is a comprehensive dashboard project leveraging the dataset of an electronics hardware company (Atliq). The dashboard provides various views including Finance, Sales, Marketing, and Supply Chain, offering valuable insights for informed decision-making.</p>
+          </div>
+        </div>
+        <div class="ProjectDetails">
+          <h3>PROJECT DETAILS</h3>
+          <p class="project-description">
+            <h4>Data Pipeline</h4>
+            <ul>
+              <li>
+                <strong>Dataset Source:</strong> Uploaded into MySQL for efficient management
+              </li>
+              <li>
+                <strong>Data Linking:</strong> Connected MySQL with Power BI
+              </li>
+              <li>
+                <strong>Data Modeling:</strong> Optimized star schema inside Power BI
+              </li>
+            </ul>
+
+            <h4>Dashboard Structure</h4>
+            <ul>
+              <li>
+                <strong>Home:</strong> Central navigation hub
+              </li>
+              <li>
+                <strong>Finance:</strong> YoY sales & margin analysis
+              </li>
+              <li>
+                <strong>Sales:</strong> Net sales, discounts, COGS insights
+              </li>
+              <li>
+                <strong>Marketing:</strong> Net, gross & net margin by region
+              </li>
+              <li>
+                <strong>Supply Chain:</strong> Forecast accuracy & net error
+              </li>
+            </ul>
+
+            <h4>Technical Details</h4>
+            <ul>
+              <li>Power Query transformations</li>
+              <li>DAX measures for KPIs</li>
+              <li>5 Pages: Home, Finance, Sales, Marketing, Supply Chain</li>
+            </ul>
+          </p>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe title="BI360_N" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjFkMmYzYTYtMGVlNC00Nzk2LWFiMTYtMjUwN2RlYWJkZDYxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div> 
+    </div> -->
+
+    <!-- ================= PROJECT OVERLAY ================= -->
+    <div class="project-overlay" id="projectOverlay">
+      <div class="project-panel">
+
+        <h2 class="project-title" id="overlayTitle"></h2>
+
+        <div class="tech-stack" id="overlayTech"></div>
+
+        <p class="project-description" id="overlayDesc"></p>
+
+        <div class="ProjectDetails" id="overlayDetails"></div>
+
+        <div class="iframe-wrapper">
+          <iframe id="overlayFrame" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
